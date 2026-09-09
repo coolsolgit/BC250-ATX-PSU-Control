@@ -1,5 +1,4 @@
 import serial
-import time
 
 # Replace '/dev/ttyACM0' with your actual Arduino port
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
