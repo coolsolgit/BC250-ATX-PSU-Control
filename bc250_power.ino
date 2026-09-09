@@ -54,6 +54,7 @@ void loop() {
         Serial.println("SHUTDOWN");
       }
     }
+    
   }
 
   //버튼 5초누름 -> Atx Off
@@ -63,7 +64,7 @@ void loop() {
   }
 
   //TPMS Off(0.5초유지) -> Atx Off
-  if (systemUp) {
+  if (systemUp) {    
     if (digitalRead(PIN_NUM_TMPS) == HIGH) {
       tpmsOffTimer = millis();
     }
