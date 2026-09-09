@@ -58,7 +58,7 @@ void loop() {
   }
 
   //버튼4초누름(강제종료) -> Atx Off
-  if (systemUp && stateFix == LOW && !pressCleared && (millis()-timerForce) >= INTERVAL_FORCE) {
+  if (systemUp && stateFix == LOW && !pressCleared && (millis()-timerForce) > INTERVAL_FORCE) {
     powerOff();
     pressCleared = true;
   }
@@ -69,7 +69,7 @@ void loop() {
       timerTpmsOff = millis();
     }
     else {
-      if ((millis()-timerTpmsOff) >= INTERVAL_TMPS)
+      if ((millis()-timerTpmsOff) > INTERVAL_TMPS)
         powerOff();
     }
   }
