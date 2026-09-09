@@ -8,9 +8,9 @@ const int MIL_TMPS_INTERVAL  = 500; //BC250 TPMS Off -> Atx Off넘어가는 기�
 
 unsigned long pressTimer      = 0; //버튼상태변경시점
 unsigned long pressForceTimer = 0; //강제종료누름시점
-unsigned long tpmsOffTimer    = 0; // TPMS가 Off로 변경된 시점
+unsigned long tpmsOffTimer    = 0; //TPMS가 Off로 변경된 시점
 
-bool systemUp      = false; // 현재 On/Off상태
+bool systemUp      = false; //현재 On/Off상태
 bool pressCleared  = false; //버튼누름 동작완료
 bool stateFix      = HIGH; //확정된 버튼누름상태
 bool stateTemp     = HIGH; //확정되기전 변경된 버튼누름상태
