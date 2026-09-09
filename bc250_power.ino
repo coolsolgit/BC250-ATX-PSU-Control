@@ -7,7 +7,7 @@ const int INTERVAL_FORCE = 4000; //강제종료누름 동작 기준시간
 const int INTERVAL_TMPS  = 500; //BC250 TPMS Off -> Atx Off넘어가는 기준시간
 
 unsigned long timerPress      = 0; //버튼상태변경시점
-unsigned long timerForce = 0; //강제종료누름시점
+unsigned long timerForce      = 0; //강제종료누름시점
 unsigned long timerTpmsOff    = 0; //TPMS가 Off로 변경된 시점
 
 bool systemUp      = false; //현재 On/Off상태
