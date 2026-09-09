@@ -32,7 +32,7 @@ void loop() {
 
   bool stateNow = digitalRead(PIN_NUM_BTN);
   
-  // 버튼눌림상태가 변함
+  //버튼눌림상태가 변함
   if (stateNow != stateTemp) {
     pressTimer = millis();
     stateTemp = stateNow;
