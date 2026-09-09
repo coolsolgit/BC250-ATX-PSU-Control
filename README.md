@@ -1,4 +1,4 @@
-# BC250-ATX-PSU-Control
+# Arduino Nano를 이용한 BC250 ATX-PowerSupply제어
 
 책임지지 않아요, 나도 잘 몰라요.
 
