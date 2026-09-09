@@ -38,7 +38,7 @@ void loop() {
     stateTemp = stateNow;
   }
 
-  // 오동작 방지위해 버튼 누름상태는 0.03초가 지나야 상태변경 인정
+  // 오동작 방지위해 버튼 누름상태는 0.02초가 지나야 상태변경 인정
   if (stateNow != stateFix && (millis()-pressTimer) > MIL_BTN_INTERVAL) {
     stateFix = stateNow;
 
@@ -56,13 +56,13 @@ void loop() {
     }
   }
 
-  // 버튼 5초이상누름 -> Atx Off
+  // 버튼 5초누름 -> Atx Off
   if (stateFix == LOW && systemUp && !pressCleared && (millis()-pressForceTimer) >= MIL_FORCE_INTERVAL) {
     powerOff();
     pressCleared = true;
   }
 
-  // TPMS Off -> Atx Off
+  // TPMS Off(0.5초유지) -> Atx Off
   if (systemUp) {
     if (digitalRead(PIN_NUM_TMPS) == HIGH) {
       tpmsOffTimer = millis();
