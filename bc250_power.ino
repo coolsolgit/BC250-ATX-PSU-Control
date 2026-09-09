@@ -46,6 +46,7 @@ void loop() {
       timerForce = millis(); //강제종료누름 시작
       pressCleared = false;
 
+      //꺼진상태에서 눌리면 Atx On, 켜진상태에서 눌리면 BC250 USB시리얼포트로 종료신호전송
       if (!systemUp) {
         powerOn();
         pressCleared = true; //버튼누름 동작완료
