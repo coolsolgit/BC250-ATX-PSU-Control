@@ -3,7 +3,7 @@ const int  PIN_NUM_PON  = 8;   //ATX파워 P_ON케이블
 const int  PIN_NUM_TMPS = 9;   //TPMS 3.3V Standby -> Alive체크 소스로 이용
 
 const int MIL_BTN_INTERVAL   = 20; //버튼누름 동작 기준시간
-const int MIL_FORCE_INTERVAL = 5000; //강제종료누름 동작 기준시간
+const int MIL_FORCE_INTERVAL = 4000; //강제종료누름 동작 기준시간
 const int MIL_TMPS_INTERVAL  = 500; //BC250 TPMS Off -> Atx Off넘어가는 기준시간
 
 unsigned long pressTimer      = 0; //버튼상태변경시점
@@ -57,7 +57,7 @@ void loop() {
     
   }
 
-  //버튼 5초누름 -> Atx Off
+  //버튼4초누름(강제종료) -> Atx Off
   if (stateFix == LOW && systemUp && !pressCleared && (millis()-pressForceTimer) >= MIL_FORCE_INTERVAL) {
     powerOff();
     pressCleared = true;
