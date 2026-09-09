@@ -52,7 +52,7 @@ void loop() {
         pressCleared = true; //버튼누름 동작완료
       }
       else {
-        Serial.println("SHUTDOWN");
+        Serial.println("SHELL_SHUTDOWN");
       }
     }
     
