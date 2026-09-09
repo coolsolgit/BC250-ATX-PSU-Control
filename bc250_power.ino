@@ -2,13 +2,13 @@ const int  PIN_NUM_BTN  = 7;   //전원버튼
 const int  PIN_NUM_PON  = 8;   //ATX파워 P_ON케이블
 const int  PIN_NUM_TMPS = 9;   //TPMS 3.3V Standby -> Alive체크 소스로 이용
 
-const int MIL_BTN_INTERVAL   = 20; //버튼누름 동작 기준시간
-const int MIL_FORCE_INTERVAL = 4000; //강제종료누름 동작 기준시간
-const int MIL_TMPS_INTERVAL  = 500; //BC250 TPMS Off -> Atx Off넘어가는 기준시간
+const int INTERVAL_BTN   = 20; //버튼누름 동작 기준시간
+const int INTERVAL_FORCE = 4000; //강제종료누름 동작 기준시간
+const int INTERVAL_TMPS  = 500; //BC250 TPMS Off -> Atx Off넘어가는 기준시간
 
-unsigned long pressTimer      = 0; //버튼상태변경시점
-unsigned long pressForceTimer = 0; //강제종료누름시점
-unsigned long tpmsOffTimer    = 0; //TPMS가 Off로 변경된 시점
+unsigned long timerPress      = 0; //버튼상태변경시점
+unsigned long timerPressForce = 0; //강제종료누름시점
+unsigned long timerTpmsOff    = 0; //TPMS가 Off로 변경된 시점
 
 bool systemUp      = false; //현재 On/Off상태
 bool pressCleared  = false; //버튼누름 동작완료
@@ -17,7 +17,7 @@ bool stateTemp     = HIGH; //확정되기전 변경된 버튼누름상태
 
 void atxOn()  { pinMode(PIN_NUM_PON, OUTPUT); digitalWrite(PIN_NUM_PON, LOW); digitalWrite(LED_BUILTIN, HIGH); }
 void atxOff() { pinMode(PIN_NUM_PON, INPUT); digitalWrite(LED_BUILTIN, LOW); }
-void powerOn()  { systemUp = true;  atxOn();  tpmsOffTimer = millis(); }
+void powerOn()  { systemUp = true;  atxOn();  timerTpmsOff = millis(); }
 void powerOff() { systemUp = false; atxOff(); }
 
 void setup() {
@@ -34,16 +34,16 @@ void loop() {
   
   //버튼눌림상태가 변함
   if (stateNow != stateTemp) {
-    pressTimer = millis();
+    timerPress = millis();
     stateTemp = stateNow;
   }
 
   //오동작 방지위해 버튼 누름상태는 0.02초가 지나야 상태변경 인정
-  if (stateNow != stateFix && (millis()-pressTimer) > MIL_BTN_INTERVAL) {
+  if (stateNow != stateFix && (millis()-timerPress) > INTERVAL_BTN) {
     stateFix = stateNow;
 
     if (stateFix == LOW) {
-      pressForceTimer = millis(); //강제종료누름 시작
+      timerPressForce = millis(); //강제종료누름 시작
       pressCleared = false;
 
       if (!systemUp) {
@@ -58,7 +58,7 @@ void loop() {
   }
 
   //버튼4초누름(강제종료) -> Atx Off
-  if (systemUp && stateFix == LOW && !pressCleared && (millis()-pressForceTimer) >= MIL_FORCE_INTERVAL) {
+  if (systemUp && stateFix == LOW && !pressCleared && (millis()-timerPressForce) >= INTERVAL_FORCE) {
     powerOff();
     pressCleared = true;
   }
@@ -66,10 +66,10 @@ void loop() {
   //TPMS Off(0.5초유지) -> Atx Off
   if (systemUp) {    
     if (digitalRead(PIN_NUM_TMPS) == HIGH) {
-      tpmsOffTimer = millis();
+      timerTpmsOff = millis();
     }
     else {
-      if ((millis()-tpmsOffTimer) >= MIL_TMPS_INTERVAL)
+      if ((millis()-timerTpmsOff) >= INTERVAL_TMPS)
         powerOff();
     }
   }
