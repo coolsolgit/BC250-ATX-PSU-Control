@@ -31,7 +31,7 @@ void setup() {
 void loop() {
 
   bool stateNow = digitalRead(PIN_NUM_BTN); //현재 버튼눌림상태
-  unsigned long timerNow = millis(); //현재 UpTime
+  unsigned long timerNow = millis(); //현재 Arduino UpTime
   
   //버튼눌림상태가 변함
   if (stateNow != stateTemp) {
@@ -39,7 +39,7 @@ void loop() {
     stateTemp = stateNow;
   }
 
-  //오동작 방지위해 버튼 누름상태는 0.02초가 지나야 상태변경 인정
+  //오동작 방지위해 버튼 누름상태는 0.02초가 지나야 상태변경 인정, RealWorld용 안전장치
   if (stateNow != stateFix && (timerNow-timerPress) > INTERVAL_BTN) {
     stateFix = stateNow;
 
