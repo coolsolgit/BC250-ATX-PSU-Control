@@ -1,6 +1,6 @@
-const int PIN_NUM_BTN  = 7;   //전원버튼
-const int PIN_NUM_PON  = 8;   //ATX파워 P_ON케이블
-const int PIN_NUM_TMPS = 9;   //TPMS 3.3V Standby -> Alive체크 소스로 이용
+const int PIN_NUM_BTN  = 7;  //전원버튼
+const int PIN_NUM_PON  = 8;  //ATX파워 P_ON케이블
+const int PIN_NUM_TMPS = 9;  //TPMS 3.3V Standby -> Alive체크 소스로 이용
 
 const int INTERVAL_BTN   = 20;   //버튼누름 동작기준 MilSec
 const int INTERVAL_FORCE = 4000; //강제종료누름 동작기준 MilSec
