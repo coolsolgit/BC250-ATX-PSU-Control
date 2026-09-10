@@ -66,14 +66,15 @@ void loop() {
   }
 
   //TPMS Off(0.5초유지) -> Atx Off
-  if (systemUp) {    
-    if (digitalRead(PIN_NUM_TMPS) == HIGH) {
-      timerTpmsOff = timerNow;
-    }
-    else {
-      if (timerNow-timerTpmsOff) > INTERVAL_TMPS)
+  if (systemUp) {
+    
+    if (digitalRead(PIN_NUM_TMPS) == LOW) && (timerNow-timerTpmsOff) > INTERVAL_TMPS) {
         powerOff();
     }
+    else {
+      timerTpmsOff = timerNow;
+    }
+
   }
 
 }
