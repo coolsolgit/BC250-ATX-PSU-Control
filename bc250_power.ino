@@ -68,7 +68,7 @@ void loop() {
   //TPMS Off(0.5초유지) -> Atx Off
   if (systemUp) {
     if (digitalRead(PIN_NUM_TMPS) == LOW && (timerNow-timerTpmsOff) > INTERVAL_TMPS) {
-        powerOff();
+      powerOff();
     }
     else {
       timerTpmsOff = timerNow;
