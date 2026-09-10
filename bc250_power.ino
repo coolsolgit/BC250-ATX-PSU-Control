@@ -2,9 +2,9 @@ const int PIN_NUM_BTN  = 7;   //전원버튼
 const int PIN_NUM_PON  = 8;   //ATX파워 P_ON케이블
 const int PIN_NUM_TMPS = 9;   //TPMS 3.3V Standby -> Alive체크 소스로 이용
 
-const int INTERVAL_BTN   = 20; //버튼누름 동작기준 MilSec
+const int INTERVAL_BTN   = 20;   //버튼누름 동작기준 MilSec
 const int INTERVAL_FORCE = 4000; //강제종료누름 동작기준 MilSec
-const int INTERVAL_TMPS  = 500; //BC250 TPMS Off -> Atx Off넘어가는 MilSec
+const int INTERVAL_TMPS  = 500;  //BC250 TPMS Off -> Atx Off넘어가는 MilSec
 
 unsigned long timerPress    = 0; //버튼상태변경시점 UpTime
 unsigned long timerForce    = 0; //강제종료누름시점 UpTime
@@ -12,8 +12,8 @@ unsigned long timerTpmsOff  = 0; //TPMS가 Off로 변경된 시점 UpTime
 
 bool systemUp      = false; //현재 On/Off상태
 bool pressCleared  = false; //버튼누름 동작완료
-bool stateFix      = HIGH; //확정된 버튼누름상태
-bool stateTemp     = HIGH; //확정되기전 변경된 버튼누름상태
+bool stateFix      = HIGH;  //확정된 버튼누름상태
+bool stateTemp     = HIGH;  //확정되기전 변경된 버튼누름상태
 
 void atxOn()  { pinMode(PIN_NUM_PON, OUTPUT); digitalWrite(PIN_NUM_PON, LOW); digitalWrite(LED_BUILTIN, HIGH); }
 void atxOff() { pinMode(PIN_NUM_PON, INPUT); digitalWrite(LED_BUILTIN, LOW); }
