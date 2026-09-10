@@ -9,4 +9,4 @@ while True:
         if line == "SHELL_SHUTDOWN":
             os.system("sudo poweroff") 
 
-ser.close()
+# ser.close()
