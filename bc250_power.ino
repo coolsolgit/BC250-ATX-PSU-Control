@@ -31,19 +31,20 @@ void setup() {
 void loop() {
 
   bool stateNow = digitalRead(PIN_NUM_BTN);
+  unsigned long timerNow = millis();
   
   //버튼눌림상태가 변함
   if (stateNow != stateTemp) {
-    timerPress = millis();
+    timerPress = timerNow;
     stateTemp = stateNow;
   }
 
   //오동작 방지위해 버튼 누름상태는 0.02초가 지나야 상태변경 인정
-  if (stateNow != stateFix && (millis()-timerPress) > INTERVAL_BTN) {
+  if (stateNow != stateFix && (timerNow-timerPress) > INTERVAL_BTN) {
     stateFix = stateNow;
 
     if (stateFix == LOW) {
-      timerForce = millis(); //강제종료누름 시작
+      timerForce = timerNow; //강제종료누름 시작
       pressCleared = false;
 
       //꺼진상태에서 눌리면 Atx On, 켜진상태에서 눌리면 BC250 USB시리얼포트로 종료신호전송
@@ -59,7 +60,7 @@ void loop() {
   }
 
   //버튼4초누름(강제종료) -> Atx Off
-  if (systemUp && stateFix == LOW && !pressCleared && (millis()-timerForce) > INTERVAL_FORCE) {
+  if (systemUp && stateFix == LOW && !pressCleared && (timerNow-timerForce) > INTERVAL_FORCE) {
     powerOff();
     pressCleared = true;
   }
@@ -67,10 +68,10 @@ void loop() {
   //TPMS Off(0.5초유지) -> Atx Off
   if (systemUp) {    
     if (digitalRead(PIN_NUM_TMPS) == HIGH) {
-      timerTpmsOff = millis();
+      timerTpmsOff = timerNow;
     }
     else {
-      if ((millis()-timerTpmsOff) > INTERVAL_TMPS)
+      if (timerNow-timerTpmsOff) > INTERVAL_TMPS)
         powerOff();
     }
   }
