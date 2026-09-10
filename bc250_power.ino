@@ -31,7 +31,7 @@ void setup() {
 void loop() {
 
   bool stateNow = digitalRead(PIN_NUM_BTN); //현재 버튼눌림상태
-  unsigned long timerNow = millis(); //현재 Arduino UpTime
+  unsigned long timerNow = millis(); //현재 Arduino UpTime MilSec
   
   //버튼눌림상태가 변함
   if (stateNow != stateTemp) {
