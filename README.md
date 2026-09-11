@@ -20,3 +20,9 @@ BC250이나 아두이노는 회로상 모두 ATX PSU의 GROUND를 공유함, 그
 최대한 단순하게 그냥 아두이노하고 스위치만 있으면 만들 수 있게 하고, BC250 기판에 납땜을 하지 않는것을 주안점으로 진행.
 
 Arduino-BC250연결은 USB포트와 BC250 TPMS 점퍼에 듀퐁케이블로 연결(TPMS가 일반점퍼 규격보다 작음주의)
+
+전원이 켜진상태에서 버튼을 누르면 BC250 시리얼포트로 종료신호를 보내고 Linux Python코드에서 이를 수신하면 Linux종료처리 구현함 
+BC250 Linux에서(bazzite chchyOS)에 시리얼포트(ttyUSB0등)에 Listening을 걸면 BC250이 리부팅됨
+Nano호환보드의 USB칩인 CH320G문제인지 리눅스커널의 CH320드라이버 문제인지 아직 모르겠음
+하나의 Arduino로 시리얼포트까지 쓰니 문제가 생기는것 같아, 결국 별도의 시리얼포트(USB to TTL)을 구매(알리 2500원)해서 BC250 USB포트에 장착하고
+이쪽으로 Arduino Tx/Rx/GND를 연결하니 정상동작함
