@@ -7,9 +7,7 @@
 ATX PSU의 5V Standby(상시) 전원에 연결.
 
 BC250과 시리얼통신을 하려면 USB로 연결해두어야 하는데, 이경우 USB전원으로 스위칭.
-BC250전원이 켜져있으면 USB로 전원을 공급받고, 꺼지면 VIN(PSU 5V Standby)전원으로 공급받음.
-
-아두이노내부에서 전원 스위칭시 모스펫으로 전원을 USB->VIN으로 변경하는데, 이때 충격이 있는지 모르겠음.
+BC250전원이 켜져있으면 USB로 전원을 공급받고, 꺼지면 VIN(PSU 5V Standby)전원으로 공급받음. -> 이유모를 Linux리부팅현상으로 Arduion를 BC250 USB포트에서 제거하고 별도의 시리얼포트(USB to TTL)를 구매하여 BC250에 장착함
 
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
 BC250꺼질시 PSU연동은 BC250의 TMPS 3.3V Standby전원을 AliveCheck 소스로하여 이게 LOW면 ATX P_ON도 LOW로 변경
