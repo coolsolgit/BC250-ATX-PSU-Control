@@ -24,4 +24,4 @@ Arduino-BC250연결은 USB포트와 BC250 TPMS 점퍼에 듀퐁케이블로 연�
 BC250 Linux에서(bazzite chchyOS)에 시리얼포트(ttyUSB0등)에 Listening을 걸면 BC250이 리부팅됨.
 Nano호환보드의 USB칩인 CH320G문제인지 리눅스커널의 CH320드라이버 문제인지 아직 모르겠음.
 하나의 Arduino로 시리얼포트까지 쓰니 문제가 생기는것 같아, 결국 별도의 시리얼포트(USB to TTL)을 구매(알리 2500원)해서 BC250 USB포트에 장착하고
-이쪽으로 nano_TX <-> Usb_ttl_RX, GND를 연결하니 정상동작함.
+이쪽으로 nano_TX <-> usb_ttl_RX, GND를 연결하니 정상동작함.
