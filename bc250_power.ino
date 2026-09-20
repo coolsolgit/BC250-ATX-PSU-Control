@@ -53,10 +53,9 @@ void loop() {
         pressCleared = true; //버튼누름 동작완료
       }
       else {
-        // BC250 Linux에서(bazzite chchyOS)에 시리얼포트(ttyUSB0등)에 Listening을 걸면 BC250이 리부팅됨
-        // Nano호환보드의 USB칩인 CH320G문제인지 리눅스커널의 CH320드라이버 문제인지 아직 몰라 사용보류
-        // 하나의 Arduino로 시리얼포트까지 쓰니 문제가 생김, 결국 별도의 시리얼포트(USB to TTL)을 구매해서 BC250에 장착하고
-        // 이쪽으로 Arduino Tx/Rx/GND를 연결하니 정상동작함
+        // BC250 Linux에서(bazzite, chchyOS) 시리얼포트(ttyUSB0등) Listening을 걸면 BC250이 리부팅되는 원인불명의 현상발생
+        // 마음에 안들지만 Nano내장 시리얼칩을 사용하지 않고 별도의 시리얼포트(USB to TTL)을 구매해서 BC250에 장착하고
+        // 이쪽으로 Arduino Tx/GND를 연결하여 동작시킴
         Serial.println("SHELL_SHUTDOWN");
       }
     }
