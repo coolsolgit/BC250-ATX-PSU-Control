@@ -6,10 +6,6 @@
 
 ATX PSU의 5V Standby(상시) 전원에 연결.
 
-Arduino UNO/NANO에서는 SerialPort가 열리는 순간 Arduino가 Reset되도록 설계되어있음
-이러한 이유로 정상적인 사용을 위해서는 별도의 USB to TTL 모듈을 장착해야 정상적인 ATX전원관리가 가능.
-Nano에 캐피시터나 저항을 붙여서 Reset을 방지할수 있는 방법이 있다고 하나, 그냥 TTL모듈을 사서 연결하여 해결
-
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
 BC250꺼질시 PSU연동은 BC250의 TMPS 3.3V Standby전원을 AliveCheck 소스로하여 이게 LOW면 ATX P_ON도 LOW로 변경
 
@@ -22,7 +18,8 @@ Arduino-BC250연결은 USB포트와 BC250 TPMS 점퍼에 듀퐁케이블로 연�
 
 전원이 켜진상태에서 버튼을 누르면 BC250 시리얼포트로 종료신호를 보내고 Linux Python코드에서 이를 수신하면 Linux종료처리 구현함.
 
-BC250 Linux에서(bazzite chchyOS)에 시리얼포트(ttyUSB0등)에 Listening을 걸면 BC250이 리부팅됨.
-Nano호환보드의 USB칩인 CH320G문제인지 리눅스커널의 CH320드라이버 문제인지 아직 모르겠음.
-하나의 Arduino로 시리얼포트까지 쓰니 문제가 생기는것 같아, 결국 별도의 시리얼포트(USB to TTL)을 구매(알리 2500원)해서 BC250 USB포트에 장착하고
+Arduino UNO/NANO에서는 SerialPort가 열리는 순간 Arduino가 Reset되도록 설계되어있음
+이러한 이유로 정상적인 사용을 위해서는 별도의 USB to TTL 모듈을 장착해야 정상적인 ATX전원관리가 가능.
+Nano에 캐피시터나 저항을 붙여서 Reset을 방지할수 있는 방법이 있다고 하나, 그냥 TTL모듈을 사서 연결하여 해결.
+시리얼포트(USB to TTL)을 구매(알리 2500원)해서 BC250 USB포트에 장착하고
 이쪽으로 nano:TX <-> usb_ttl:RX 및 양쪽 GND를 연결하니 정상동작함.
