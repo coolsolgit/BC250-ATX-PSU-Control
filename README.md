@@ -6,8 +6,9 @@
 
 ATX PSU의 5V Standby(상시) 전원에 연결.
 
-BC250과 시리얼통신을 하려면 USB로 연결해두어야 하는데, 이경우 USB전원으로 스위칭.
-BC250전원이 켜져있으면 USB로 전원을 공급받고, 꺼지면 VIN(PSU 5V Standby)전원으로 공급받음. -> 오동작으로 Arduion를 BC250 USB포트에서 제거하고 별도의 시리얼포트(USB to TTL)를 구매하여 BC250에 장착함
+Arduino UNO/NANO에서는 SerialPort가 열리는 순간 Arduino가 Reset되도록 설계되어있음
+이러한 이유로 정상적인 사용을 위해서는 별도의 USB to TTL 모듈을 장착해야 정상적인 ATX전원관리가 가능.
+Nano에 캐피시터나 저항을 붙여서 Reset을 방지할수 있는 방법이 있다고 하나, 그냥 TTL모듈을 사서 연결하여 해결
 
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
 BC250꺼질시 PSU연동은 BC250의 TMPS 3.3V Standby전원을 AliveCheck 소스로하여 이게 LOW면 ATX P_ON도 LOW로 변경
