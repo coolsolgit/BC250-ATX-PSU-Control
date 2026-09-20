@@ -53,7 +53,8 @@ void loop() {
         pressCleared = true; //버튼누름 동작완료
       }
       else {
-        // BC250 Linux에서(bazzite, chchyOS) 시리얼포트(ttyUSB0등) Listening을 걸면 BC250이 리부팅되는 원인불명의 현상발생
+        // Arduino UNO/NANO에서는 SerialPort가 열리는 순간 Arduino가 Reset되도록 설계되어있음
+        // 이러한 이유로 정상적인 사용을 위해서는 별도의 USB to TTL 모듈을 장착해야 정상적인 ATX전원관리가 가능 
         // 마음에 안들지만 Nano내장 시리얼칩을 사용하지 않고 별도의 시리얼포트(USB to TTL)을 구매해서 BC250에 장착하고
         // 이쪽으로 Arduino Tx/GND를 연결하여 동작시킴
         Serial.println("SHELL_SHUTDOWN");
