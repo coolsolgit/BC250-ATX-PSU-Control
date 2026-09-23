@@ -83,7 +83,7 @@ flowchart LR
     TPMS[TPMS1 Pin9]
     BUSB[USB]
   end
-  UUSB --- BUSB
+  UUSB ---|USB케이블| BUSB
   TX --- RX
 P7 --- BTN1
 P8 --- PS_ON
