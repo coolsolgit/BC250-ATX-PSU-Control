@@ -55,19 +55,32 @@ ATX PSU의 PS_ON
 ```mermaid
 flowchart LR
   subgraph Arduino Nano
-    UI[Web app]
-    Cache[(Local cache)]
+    P7[Pin7]
+    P8[Pin8]
+    P9[Pin9]
+    VIN[VIN]
+    AGND[GND]
+    TX[TX]
+  end
+  subgraph USB to TTL
+    RX[RX]
+    UGND[GND]
   end
   subgraph ATX PSU
-    API[API gateway]
-    Auth[Auth service]
-    Orders[Order service]
+    5V[5V STB]
+    3.3V[3.3V]
+    PS_ON[PS_ON]
+    GND[GND]
   end
   subgraph Button
-    DB[(Orders DB)]
+    BTN1[Button+]
+    BTN2[Button-]
+    LED1[LED+]
+    LED2[LED-]
   end
   subgraph BC250
-    TPMS[(Pin88)]
+    TPMS[TPMS1 Pin9]
+    USB[USB]
   end
   UI --> API
   UI --> Cache
