@@ -56,6 +56,9 @@ username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 crontab으로 등록
 ```
 crontab -e
+```
+추가
+```
 @reboot /usr/bin/python3 /MY_PATH/serial_listener.py &
 ```
 
@@ -63,8 +66,7 @@ CachyOS는 crontab기본설치가 안되있음
 ```
 sudo nano /etc/systemd/system/serial-listen.service
 ```
-
-입력내용
+추가
 ```
 [Unit]
 Description=Shutdown signal monitor
