@@ -54,17 +54,20 @@ ATX PSU의 PS_ON
 
 ```mermaid
 flowchart LR
-  subgraph Client
+  subgraph Arduino Nano
     UI[Web app]
     Cache[(Local cache)]
   end
-  subgraph Services
+  subgraph ATX PSU
     API[API gateway]
     Auth[Auth service]
     Orders[Order service]
   end
-  subgraph Storage
+  subgraph Button
     DB[(Orders DB)]
+  end
+  subgraph BC250
+    TPMS[(Pin88)]
   end
   UI --> API
   UI --> Cache
