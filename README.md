@@ -63,6 +63,7 @@ flowchart LR
   subgraph BC250
     TPMS[TPMS1 Pin9]
     BUSB[USB]
+    PCIE[PCI8Pin/MicroFit]
   end
   subgraph USB to TTL
     RX[RX]
@@ -74,6 +75,7 @@ flowchart LR
     3.3V[3.3V]
     PS_ON[PS_ON]
     PGND[GND]
+    12V[12V]
   end
   subgraph Button
     BTN1[Button+]
@@ -81,18 +83,18 @@ flowchart LR
     LED1[LED+]
     LED2[LED-]
   end
-
   UUSB ---|USB케이블| BUSB
   TX --- RX
-P7 --- BTN1
-P8 --- PS_ON
-P9 --- TPMS
-AGND --- PGND
-AGND --- BTN2
-AGND --- LED2
-ATGND --- UGND
-3.3V ---|버튼LED허용전압선택| LED1
-5V --- VIN
+  P7 --- BTN1
+  P8 --- PS_ON
+  P9 --- TPMS
+  AGND --- PGND
+  AGND --- BTN2
+  AGND --- LED2
+  ATGND --- UGND
+  3.3V ---|버튼LED허용전압선택| LED1
+  5V --- VIN
+  12V --- PCIE
 ```
 
 ## Serial port listener적용
