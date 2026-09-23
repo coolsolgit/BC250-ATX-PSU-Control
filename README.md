@@ -92,7 +92,7 @@ AGND --- PGND
 AGND --- BTN2
 AGND --- LED2
 AGND --- UGND
-3.3V --- LED1
+3.3V ---|버튼LED허용전압선택| LED1
 5V --- VIN
 ```
 
