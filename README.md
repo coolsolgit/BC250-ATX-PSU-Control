@@ -1,24 +1,25 @@
 # Arduino Nano를 이용한 BC250 ATX-PowerSupply제어
 
-BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연결되므로 PSU의 전원을 스스로 끌수없어 Arduino Nano를 이용하여 이를 제어하도록 제작
+BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연결되므로 PSU의 전원을 스스로 끌수없어 Arduino Nano를 이용하여 이를 제어
 
 ## 제작목표
 * 가장 적은 비용
   * Arduino Nano는 알리에서 호환제품을 3000원정도에 구매가능하며 별도의 프로그램머나 디버거가 필요없음
   * Nano에서 BC250으로 종료신호를 보내기 위해 별도의 USB to ttl모듈이 필요함
+    > Nano에 내장된 USB칩으로 TTL통신을 하려고 했으나 Arduino는 Serical통신이 시작되면 Reset되도록 설계된것을 나중에 알아 최초계획과는 다르게 추가비용(2000원)이 발생
 * 가장 간단한 구조
-  * BC250본체에 납땜작업이 없도록 구성
-  * 만능기판이나 Nano외 추가적이 회로구성이 불필요하게 구성
-   > BC250이나 아두이노는 회로상 모두 ATX PSU의 GND를 공유함, 그래서 전위차가 없으니 옵토커플러나 릴레이를 이용한 ATX P_ON 및 TPMS 절연은 오버스펙같음.
-옵토커플러나 릴레이를 추가하여 회로를 구성하려면 회로가 복잡해지고 만능기판같은 추가자재가 필요해져 기구제작이 복잡해짐.
+  * BC250본체에는 납땜작업이 필요없음
+  * 추가적인 전자소자나 회로기판이 불필요하게 구성
+   > BC250이나 아두이노는 회로상 모두 ATX PSU의 GND를 공유함, 그래서 전위차가 없으니 옵토커플러나 릴레이를 이용한 ATX P_ON 및 TPMS 절연은 오버스펙같음
 
 ## 구현기능
-* ATX PSU Off상태에서 Button Press -> ATX PSU On -> BC250 On
-  * BC250은 자동전원On상태로 점퍼적용
-* ATX PSU On(BC250 On)상태에서 Button Press -> BC250 Off -> ATX PSU Off
+* ATX PSU Off상태에서 버튼을 눌러 PSU와 BC250을 On
+  * Arduino Nano는 ATX 5V상시전원에 연결
+  * BC250은 AutoStart상태로 점퍼(AUTO_PWR_ON)적용
+* BC250 On(ATX PSU On)상태에서 버튼을 눌러 PSU와 BC250을 Off
   * BC250의 Linux에서 Serical Port Listeng프로그램([serial_listener.py](https://github.com/coolsolgit/BC250-ATX-PSU-Control/blob/main/serial_listener.py)) 실행필요
-  * BC250의 TPMS 3.3V Standby전원을 Nano에 연결하여 AliveCheck Source로 사용
-* ATX PSU On 상태에서 4초간 Button Press(**강제종료**) -> ATX PSU Off
+  * BC250의 TPMS 3.3V전원을 Nano에 연결하여 AliveCheck Source로 사용
+* ATX PSU On 상태에서 4초간 버튼을 눌러 강제로 PSU와 BC250을 Off
 
 ```mermaid
 flowchart LR
@@ -40,7 +41,7 @@ A3[ATX PSU On] --> B3((버튼4초Press))
 ```
 
 
-## 결선
+## 배선
 ATX PSU의 5V Standby(상시)
 
 TPMS 3.3V Standby
