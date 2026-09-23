@@ -52,9 +52,9 @@ TPMS 3.3V Standby
 ```mermaid
 flowchart LR
   subgraph Arduino Nano
-    P7[Pin7]
-    P8[Pin8]
-    P9[Pin9]
+    P7[Pin D7]
+    P8[Pin D8]
+    P9[Pin D9]
     VIN[VIN]
     AGND[GND]
     TX[TX]
