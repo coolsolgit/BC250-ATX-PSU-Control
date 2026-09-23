@@ -28,12 +28,12 @@ ATX PSB의 PS_ON
 CachyOS기준으로 설명
 
 Pathon 및 Sereial Lib설치
-'''
+```
 sudo pacman -Syu
 sudo pacman -S python
 python --version
 sudo pacman -S python-pyserial
-'''
+```
 
 파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
 '''
