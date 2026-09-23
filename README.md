@@ -52,12 +52,7 @@ ATX PSU의 PS_ON
 버튼 및 버튼LED
 > 버튼LED의 전압에 맞는 PSU에서 뽑아서 사용
 
-```
-config:
-  theme: default
-  look: classic
-  layout: dagre
-```
+```mermaid
 flowchart LR
   subgraph Client
     UI[Web app]
@@ -77,6 +72,7 @@ flowchart LR
   API --> Orders
   Orders --> DB
   Auth -. token .-> UI
+```
 
 ## Serial port listener적용
 CachyOS기준으로 설명
