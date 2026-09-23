@@ -25,9 +25,9 @@ flowchart LR
 A[ATX PSU Off] -->|버튼Press| B[ATX PSU On]
   B -->|자동켜짐점퍼| C[BC250 On]
 D[ATX PSU On] -->|버튼Press| E[Arduino 셧다운신호발신]
-  E -->|Serial port신호| F[USB to Ttl모듈]
-  F -->|Serial port신호| G[Python Listener]
-  G -->|Serial port신호| H[BC250 Off]
+  E -->|Serial신호| F[USB to Ttl모듈]
+  F -->|Serial신호| G[Python Listener]
+  G -->|PowerOff명령어호출| H[BC250 Off]
 
 ```
 
