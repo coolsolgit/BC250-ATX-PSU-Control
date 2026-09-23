@@ -60,7 +60,7 @@ sudo nano /etc/systemd/system/serial-listen.service
 입력내용
 ```
 [Unit]
-Description=My Python Script on Boot
+Description=Shutdown Signal Monitor
 After=network.target
 
 [Service]
