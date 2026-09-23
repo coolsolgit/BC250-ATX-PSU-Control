@@ -50,7 +50,7 @@ ATX PSU의 PS_ON
 버튼 및 버튼LED
 > 버튼LED의 전압에 맞는 PSU에서 뽑아서 사용
 
-## Serical port listener적용
+## Serial port listener적용
 CachyOS기준으로 설명
 
 Pathon 및 Sereial Lib설치
