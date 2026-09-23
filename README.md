@@ -24,7 +24,7 @@ TPMS 3.3V Standby
 ATX PSB의 PS_ON
 버튼 및 버튼LED
 
-## Serical port Listner적용
+## Serical port Listener적용
 CachyOS기준으로 설명
 
 Pathon 및 Sereial Lib설치
