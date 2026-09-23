@@ -1,7 +1,6 @@
 # Arduino Nano를 이용한 BC250 ATX-PowerSupply제어
 
-BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연결되므로 PSU의 전원을 스스로 끌수없어 Arduino Nano를 이용하여 이를 
-
+BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연결되므로 PSU의 전원을 스스로 끌수없어 Arduino Nano를 이용하여 이를 제어
 Arduino Nano와 Arduino Uno는 구조가 동일하여 소스변경없이 Uno사용이 가능함
 
 ## 제작목표
