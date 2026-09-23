@@ -65,6 +65,7 @@ flowchart LR
   subgraph USB to TTL
     RX[RX]
     UGND[GND]
+    UUSB[USB]
   end
   subgraph ATX PSU
     5V[5V STB]
@@ -80,8 +81,9 @@ flowchart LR
   end
   subgraph BC250
     TPMS[TPMS1 Pin9]
-    USB[USB]
+    BUSB[USB]
   end
+  UUSB --> BUSB
   UI --> API
   UI --> Cache
   API --> Auth
