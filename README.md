@@ -60,6 +60,10 @@ flowchart LR
     TX[TX]
     ATGND[GND]
   end
+  subgraph BC250
+    TPMS[TPMS1 Pin9]
+    BUSB[USB]
+  end
   subgraph USB to TTL
     RX[RX]
     UGND[GND]
@@ -77,10 +81,7 @@ flowchart LR
     LED1[LED+]
     LED2[LED-]
   end
-  subgraph BC250
-    TPMS[TPMS1 Pin9]
-    BUSB[USB]
-  end
+
   UUSB ---|USB케이블| BUSB
   TX --- RX
 P7 --- BTN1
