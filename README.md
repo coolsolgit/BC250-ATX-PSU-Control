@@ -83,7 +83,7 @@ flowchart LR
     TPMS[TPMS1 Pin9]
     BUSB[USB]
   end
-  UUSB --> BUSB
+  UUSB --- BUSB
   UI --> API
   UI --> Cache
   API --> Auth
