@@ -42,12 +42,9 @@ A3[ATX PSU On] --> B3((버튼4초Press))
 
 
 ## 배선
-ATX PSU의 5V Standby(상시)
 
 TPMS 3.3V Standby
 > TPMS 헤더에 듀퐁케이블로 연결(일반점퍼 규격보다 작은 PC메인보드의 USB3.0커넥터와 같은 2.0mm의 작은Pitch)
-
-ATX PSU의 PS_ON
 
 버튼 및 버튼LED
 > 버튼LED의 전압에 맞는 PSU에서 뽑아서 사용
