@@ -22,6 +22,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 
 ## 결선
 ATX PSU의 5V Standby(상시)
+> TPMS 헤더에 듀퐁케이블로 연결(일반점퍼 규격보다 작은 PC메인보드의 USB3.0커넥터와 같은 2.0mm의 작은Pitch)
 TPMS 3.3V Standby
 ATX PSB의 PS_ON
 버튼 및 버튼LED
