@@ -1,10 +1,28 @@
 # Arduino Nano를 이용한 BC250 ATX-PowerSupply제어
 
-책임지지 않아요, 나도 잘 몰라요.
+BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연결되므로 PSU의 전원을 스스로 끌수없어 Arduino Nano를 이용하여 이를 제어하도록 제작
 
-아두이노 나노 선정이유 : 제일싸서, 알리에서 호환품 3400원, 자체 부트로더 내장해서 별도 프로그래머/디버거 구매 필요없음.
+## 제작목표
+* 가장 적은 비용
+  * Arduino Nano는 알리에서 호환제품을 3000원정도에 구매가능하며 별도의 프로그램머나 디버거가 필요없음
+  * Nano에서 BC250으로 종료신호를 보내기 위해 별도의 USB to ttl모듈이 필요함
+* 가장 간단한 구조
+  * BC250본체에 납땜작업이 없도록 구성
+  * 만능기판이나 Nano외 추가적이 회로구성이 불필요하게 구성
 
-ATX PSU의 5V Standby(상시) 전원에 연결.
+## 구현기능
+* ATX PSU Off상태에서 Button Press -> ATX PSU On -> BC250 On
+  * BC250은 자동전원On상태로 점퍼적용
+* ATX PSU On(BC250 On)상태에서 Button Press -> BC250 Off -> ATX PSU Off
+  * BC250의 Linux에서 Serical Port Listeng프로그램(serial_listener.py) 실행필요
+  * BC250의 TPMS 3.3V Standby전원을 Nano에 연결하여 AliveCheck Source로 사용
+* ATX PSU On 상태에서 4초간 Button Press(강제종료) -> ATX PSU Off
+
+## 결선
+ATX PSU의 5V Standby(상시)
+TPMS 3.3V Standby
+ATX PSB의 PS_ON
+버튼 및 버튼LED
 
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
 BC250꺼질시 PSU연동은 BC250의 TMPS 3.3V Standby전원을 AliveCheck 소스로하여 이게 LOW면 ATX P_ON도 LOW로 변경
