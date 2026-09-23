@@ -24,7 +24,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 flowchart LR
 A1[ATX PSU Off] --> B1((버튼Press))
   B1 --> C1[ATX PSU On]
-  C1 -->|자동켜짐점퍼| D1[BC250 On]
+  C1 -->|AUTO_PWR_ON Jumper| D1[BC250 On]
 D[ATX PSU On] -->|버튼Press| E[Arduino 셧다운신호발신]
   E -->|Serial신호| F[USB to Ttl모듈]
   F -->|Serial신호| G[Python Listener]
