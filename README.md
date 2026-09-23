@@ -63,7 +63,7 @@ flowchart LR
   subgraph BC250
     TPMS[TPMS1 Pin9]
     BUSB[USB]
-    PCIE[PCIE-8Pin/MicroFit]
+    PCIE[12V PCIE]
     BGND[GND]
   end
   subgraph USB to TTL
