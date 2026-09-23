@@ -24,6 +24,9 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 flowchart LR
   A[ATX PSU Off] -->|Button Press| B[ATX PSUOn]
   B -->|자동켜짐점퍼| C[BC250 On]
+D[ATX PSU Off] -->|Button Press| E[ATX PSUOn]
+  E -->|자동켜짐점퍼| F[BC250 On]
+
 ```
 
 ```mermaid
