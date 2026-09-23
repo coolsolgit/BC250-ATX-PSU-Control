@@ -92,12 +92,7 @@ AGND --- PGND
 AGND --- BTN2
 AGND --- LED2
 3.3V --- LED1
-  UI --> API
-  UI --> Cache
-  API --> Auth
-  API --> Orders
-  Orders --> DB
-  Auth -. token .-> UI
+5V --- VIN
 ```
 
 ## Serial port listener적용
