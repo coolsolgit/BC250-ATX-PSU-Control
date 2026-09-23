@@ -22,23 +22,17 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 
 ```mermaid
 flowchart LR
-  A[Start] --> B{Decision}
+  A[ATX PSU Off] -->|Button Press| B[ATX PSUOn]
+  B -->|자동켜짐점퍼| C[BC250 On]
+```
+
+```mermaid
+flowchart LR
+  A[ATX PSU Off] --> B{Decision}
   B -->|Yes| C[Finish]
   B -->|No| D[Alternate]
 ```
 
-```mermaid
-sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
-```
 
 ## 결선
 ATX PSU의 5V Standby(상시)
