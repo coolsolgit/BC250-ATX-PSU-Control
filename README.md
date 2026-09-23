@@ -22,7 +22,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 
 ```mermaid
 flowchart LR
-A[ATX PSU Off] -->|버튼Press| B((ATX PSU On))
+A[ATX PSU Off] -->|버튼Press| B(ATX PSU On)
   B -->|자동켜짐점퍼| C[BC250 On]
 D[ATX PSU On] -->|버튼Press| E[Arduino 셧다운신호발신]
   E -->|Serial신호| F[USB to Ttl모듈]
