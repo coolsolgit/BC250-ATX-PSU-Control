@@ -61,6 +61,7 @@ flowchart LR
     VIN[VIN]
     AGND[GND]
     TX[TX]
+    ATGND[GND]
   end
   subgraph USB to TTL
     RX[RX]
@@ -91,7 +92,7 @@ P9 --- TPMS
 AGND --- PGND
 AGND --- BTN2
 AGND --- LED2
-AGND --- UGND
+ATGND --- UGND
 3.3V ---|버튼LED허용전압선택| LED1
 5V --- VIN
 ```
