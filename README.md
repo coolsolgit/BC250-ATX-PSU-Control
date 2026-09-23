@@ -74,6 +74,13 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
+## BOM
+
+| 명칭  | 가격 | 구매링크 |
+| ------------- |:-------------:|-------------|
+| Arduino Nano| \3000 | ali link |
+| USB to Ttl | \3000 | ali link |
+| Debounce Button | \2000 | ali link |
 
 
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
