@@ -22,7 +22,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 * ATX PSU On 상태에서 4초간 버튼을 눌러 강제로 PSU와 BC250을 Off
 
 ```mermaid
-flowchart LR
+flowchart TD
 A1[ATX PSU Off] --> B1((버튼Press))
   B1 --> C1[(Arduino Nano)]
   C1 -->|PS_ON HIGH| D1[ATX PSU On]
