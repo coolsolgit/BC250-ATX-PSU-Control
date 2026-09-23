@@ -56,7 +56,7 @@ username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 crontab으로 등록
 ```
 crontab -e
-@reboot /usr/bin/python3 /absolute/path/to/your/script.py &
+@reboot /usr/bin/python3 /MY_PATH/serial_listener.py &
 ```
 
 CachyOS는 crontab기본설치가 안되있음
@@ -72,7 +72,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/MY_PATH/serial_listener.py
+ExecStart=/usr/bin/python3 /MY_PATH/serial_listener.py
 Restart=on-failure
 
 [Install]
