@@ -60,7 +60,7 @@ sudo nano /etc/systemd/system/serial-listen.service
 입력내용
 ```
 [Unit]
-Description=Shutdown Signal Monitor
+Description=Shutdown signal monitor
 After=network.target
 
 [Service]
