@@ -21,7 +21,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 * ATX PSU On 상태에서 4초간 Button Press(**강제종료**) -> ATX PSU Off
 
 ```mermaid
-graph TD
+flowchart LR
   A[Start] --> B{Decision}
   B -->|Yes| C[Finish]
   B -->|No| D[Alternate]
