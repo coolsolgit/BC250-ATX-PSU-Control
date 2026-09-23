@@ -95,8 +95,8 @@ flowchart LR
   ATGND --- UGND
   3.3V ---|버튼LED허용전압선택| LED1
   5V --- VIN
-  12V --- PCIE
-  PGND ---- BGND
+  12V ---|PCI전원케이블| PCIE
+  PGND ----|PCI전원케이블| BGND
 ```
 
 ## Serial port listener적용
