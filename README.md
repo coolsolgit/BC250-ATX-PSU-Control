@@ -24,6 +24,56 @@ TPMS 3.3V Standby
 ATX PSB의 PS_ON
 버튼 및 버튼LED
 
+## Serical port Listner적용
+CachyOS기준으로 설명
+
+Pathon 및 Sereial Lib설치
+'''
+sudo pacman -Syu
+sudo pacman -S python
+python --version
+sudo pacman -S python-pyserial
+'''
+
+파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
+'''
+sudo nano /etc/sudoers
+'''
+맨아래줄추가
+'''
+username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
+'''
+
+자동실행
+
+crontab으로 등록
+'''
+crontab -e
+@reboot /usr/bin/python3 /absolute/path/to/your/script.py &
+'''
+
+CachyOS는 crontab기본설치가 안되있음
+'''
+sudo nano /etc/systemd/system/serial-listen.service
+'''
+
+입력내용
+'''
+[Unit]
+Description=My Python Script on Boot
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/solgit/serial_listener.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+'''
+
+
+
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
 BC250꺼질시 PSU연동은 BC250의 TMPS 3.3V Standby전원을 AliveCheck 소스로하여 이게 LOW면 ATX P_ON도 LOW로 변경
 
