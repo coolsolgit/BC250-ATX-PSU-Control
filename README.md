@@ -37,7 +37,7 @@ A2((BC250 On)) --> B2{버튼Press}
 A3((ATX PSU On)) --> B3{버튼4초Press}
   B3 -->|강제종료| C3[(Arduino Nano)]
   C3 -->|PS_ON LOW| D3[ATX PSU Off]
-  D3 --> E3[BC250 Off]
+  D3 -->|전원차단| E3[BC250 Off]
 ```
 
 
