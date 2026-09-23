@@ -35,8 +35,7 @@ A2[BC250 On] --> B2((버튼Press))
 A3[ATX PSU On] --> B3((버튼4초Press))
   B3 --> C3[(Arduino Nano)]
   C3 -->|강제종료| D3[ATX PSU Off]
-
-
+  D3 --> E3[BC250 Off]
 ```
 
 ```mermaid
