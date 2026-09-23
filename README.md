@@ -71,7 +71,7 @@ flowchart LR
     5V[5V STB]
     3.3V[3.3V]
     PS_ON[PS_ON]
-    GND[GND]
+    PGND[GND]
   end
   subgraph Button
     BTN1[Button+]
@@ -84,6 +84,14 @@ flowchart LR
     BUSB[USB]
   end
   UUSB --- BUSB
+  TX --- RX
+P7 --- BTN1
+P8 --- PS_ON
+P9 --- TPMS
+AGND --- PGND
+AGND --- BTN2
+AGND --- LED2
+3.3V --- LED1
   UI --> API
   UI --> Cache
   API --> Auth
