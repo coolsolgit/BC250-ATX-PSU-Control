@@ -30,7 +30,7 @@ A2[ATX PSU On] --> B2((버튼Press))
   B2 --> C2(Arduino Nano)
   C2 -->|TTL신호| D2(USB to TTL)
   D2 -->|TTL신호| E2(Python Listener)
-  E2 -->|PowerOff명령어호출| F2[BC250 Off]
+  E2 -->|poweroff명령어호출| F2[BC250 Off]
 
 ```
 
