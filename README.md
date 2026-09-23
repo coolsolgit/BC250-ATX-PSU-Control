@@ -18,7 +18,7 @@ BC250채굴기에 ATX PowerSupply를 사용하는경우 PCIE 8핀 전원만 연�
 * ATX PSU On(BC250 On)상태에서 Button Press -> BC250 Off -> ATX PSU Off
   * BC250의 Linux에서 Serical Port Listeng프로그램([serial_listener.py](https://github.com/coolsolgit/BC250-ATX-PSU-Control/blob/main/serial_listener.py)) 실행필요
   * BC250의 TPMS 3.3V Standby전원을 Nano에 연결하여 AliveCheck Source로 사용
-* ATX PSU On 상태에서 4초간 Button Press(강제종료) -> ATX PSU Off
+* ATX PSU On 상태에서 4초간 Button Press(**강제종료**) -> ATX PSU Off
 
 ## 결선
 ATX PSU의 5V Standby(상시)
