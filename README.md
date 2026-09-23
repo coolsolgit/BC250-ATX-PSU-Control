@@ -72,7 +72,7 @@ flowchart LR
     UUSB[USB]
   end
   subgraph ATX PSU
-    5V[5V STB]
+    5V[5V Standby]
     3.3V[3.3V]
     PS_ON[PS_ON]
     PGND[GND]
