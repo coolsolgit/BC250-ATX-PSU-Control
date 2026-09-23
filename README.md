@@ -87,7 +87,7 @@ P7 --- BTN1
 P8 --- PS_ON
 P9 --- TPMS
 AGND --- PGND
-LED2 --- BTN2
+AGND --- BTN2
 AGND --- LED2
 ATGND --- UGND
 3.3V ---|버튼LED허용전압선택| LED1
