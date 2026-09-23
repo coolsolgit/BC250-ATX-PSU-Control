@@ -27,9 +27,9 @@ A1[ATX PSU Off] --> B1((버튼Press))
   C1 -->|PS_ON HIGH| D1[ATX PSU On]
   D1 -->|AUTO_PWR_ON Jumper| E1[BC250 On]
 A2[BC250 On] --> B2((버튼Press))
-  B2 --> C2(Arduino Nano)
-  C2 -->|TTL신호| D2(USB to TTL)
-  D2 -->|TTL신호| E2(Python Listener)
+  B2 --> C2[(Arduino Nano)]
+  C2 -->|TTL신호| D2[(USB to TTL)]
+  D2 -->|TTL신호| E2[(Python Listener)]
   E2 -->|poweroff명령어호출| F2[BC250 Off]
   F2 -->|TPMS 3.3V LOW| G2[ATX PSU Off]
 
