@@ -33,7 +33,7 @@ A2[BC250 On] --> B2((버튼Press))
   D2 -->|TTL신호| E2[(Python Listener)]
   E2 -->|poweroff명령어호출| F2[BC250 Off]
   F2 -->|TPMS 3.3V LOW| G2[(Arduino Nano)]
-  G2 --> H2[ATX PSU Off]
+  G2 -->|PS_ON LOW| H2[ATX PSU Off]
 A3[ATX PSU On] --> B3((버튼4초Press))
   B3 --> C3[(Arduino Nano)]
   C3 -->|강제종료| D3[ATX PSU Off]
