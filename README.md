@@ -64,6 +64,7 @@ flowchart LR
     TPMS[TPMS1 Pin9]
     BUSB[USB]
     PCIE[PCI8Pin/MicroFit]
+    BGND[GND]
   end
   subgraph USB to TTL
     RX[RX]
@@ -95,6 +96,7 @@ flowchart LR
   3.3V ---|버튼LED허용전압선택| LED1
   5V --- VIN
   12V --- PCIE
+  PGND ---- BGND
 ```
 
 ## Serial port listener적용
