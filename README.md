@@ -185,6 +185,6 @@ crontab -e
 | ------------- |:-------------:|-------------|
 | Arduino Nano| 개당 3400원 | [알리link](https://ko.aliexpress.com/item/1005007392605300.html) |
 | USB to TTL | 개당 1700원 | [알리link](https://ko.aliexpress.com/item/1005007718678768.html) |
-| Momentary Button | 개당 2600원 | [알리link](https://ko.aliexpress.com/item/1005006477375437.html) |
+| Momentary Button | 개당 3500원 | [알리link](https://ko.aliexpress.com/item/1005006477375437.html) |
 
 
