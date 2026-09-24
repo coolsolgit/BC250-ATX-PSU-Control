@@ -125,8 +125,6 @@ username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 
 ### 3.자동실행
 
-CachyOS는 crontab기본설치가 안되있음
-
 파일생성 및 편집
 ```
 sudo nano /etc/systemd/system/serial-listen.service
@@ -147,7 +145,7 @@ WantedBy=multi-user.target
 ```
 
 ### 4.crontab으로 자동실행하는경우
-> CachyOS는 기본으로 crontab이 설치되어 있지 않음
+> CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
 crontab편집시작
 ```
