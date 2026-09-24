@@ -144,7 +144,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-### 4.crontab으로 자동실행하는경우
+### 4.crontab으로 자동실행하는경우(Optional)
 > CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
 crontab편집시작
