@@ -178,6 +178,7 @@ crontab -e
 
 ## BOM
 > 배송비제외
+
 | 자재  | 가격 | 구매링크 |
 | ------------- |:-------------:|-------------|
 | Arduino Nano| 개당3400원 | [알리link](https://ko.aliexpress.com/item/1005007392605300.html) |
