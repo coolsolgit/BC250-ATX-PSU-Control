@@ -178,11 +178,11 @@ crontab -e
 
 ## BOM
 
-| 명칭  | 가격 | 구매링크 |
+| 자재  | 가격 | 구매링크 |
 | ------------- |:-------------:|-------------|
-| Arduino Nano| \3000 | ali link |
+| Arduino Nano| 개당1800원 | [알리link](ttps://ko.aliexpress.com/item/1005007392605300.html) |
 | USB to Ttl | 개당1700원 | [알리link](https://ko.aliexpress.com/item/1005007718678768.html) |
-| Debounce Button | \2000 | ali link |
+| Debounce Button | 개당2600원 | [알리link](https://ko.aliexpress.com/item/1005006477375437.html) |
 
 
 Arduino에 연결된 버튼누름을 인식하여 ATX P_ON HIGH/LOW을 설정하여 PSU전원을 제어함.
