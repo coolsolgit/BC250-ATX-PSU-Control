@@ -114,7 +114,7 @@ sudo pacman -S python-pyserial
 
 ### 2.Python Listener소스파일 복사
 [serial_listener.py](https://github.com/coolsolgit/BC250-ATX-PSU-Control/blob/main/serial_listener.py)를 다운로드 하여 원하는경로에 복사
-> 후속 설명중 "MY_PATH"을 실제경로로 변경하세요
+> 후속 설명중 "MY_PATH"를 실제경로로 변경하세요
 
 Linux에 등록된 USB장치의 ID를 확인하여 동일한 명칭으로 소스수정
 > 보통 ttyACM0이거나 ttyUSB0로 인식됨
