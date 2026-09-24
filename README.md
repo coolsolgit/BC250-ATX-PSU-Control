@@ -144,6 +144,13 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
+자동실행등록
+```
+sudo systemctl daemon-reload
+sudo systemctl enable serial-listen.service
+sudo systemctl start serial-listen.service
+```
+
 ### 4.crontab으로 자동실행하는경우(Optional)
 > CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
