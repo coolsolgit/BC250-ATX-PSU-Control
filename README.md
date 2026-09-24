@@ -104,7 +104,7 @@ flowchart LR
 ## Serial port listener적용
 CachyOS기준으로 설명
 
-### 1.Pathon 및 Sereial Lib설치
+### 1.Python 및 Sereial Lib설치
 ```
 sudo pacman -Syu
 sudo pacman -S python
@@ -112,7 +112,7 @@ python --version
 sudo pacman -S python-pyserial
 ```
 
-### 2.파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
+### 2.Python코드가 권한없이 poweroff호출가능하도록 권한편집
 
 권한편집시작
 ```
