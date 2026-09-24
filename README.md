@@ -125,6 +125,7 @@ ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 ```
 
 ### 3.Python코드가 권한없이 poweroff호출가능하도록 권한편집
+> Linux는 전원종료가 SuperUser권한이 필요하여 sudo명령없이 poweroff호출가능하도록 수정
 
 권한편집시작
 ```
