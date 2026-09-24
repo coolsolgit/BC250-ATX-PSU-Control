@@ -7,7 +7,8 @@
 import serial
 import subprocess
 
-# Replace '/dev/ttyACM0' with your actual Arduino port
+# 자신의 시스템에 인식된 tty device명으로 변경하세요.
+# '/dev/ttyACM0', '/dev/ttyUSB0'등
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 
 while True:
