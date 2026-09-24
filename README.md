@@ -181,7 +181,7 @@ crontab -e
 | 명칭  | 가격 | 구매링크 |
 | ------------- |:-------------:|-------------|
 | Arduino Nano| \3000 | ali link |
-| USB to Ttl | \3000 | ali link |
+| USB to Ttl | 개당1700원 | [알리link](https://ko.aliexpress.com/item/1005007718678768.html) |
 | Debounce Button | \2000 | ali link |
 
 
