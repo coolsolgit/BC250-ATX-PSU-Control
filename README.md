@@ -144,7 +144,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-자동실행등록
+부팅시 자동실행등록
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable serial-listen.service
