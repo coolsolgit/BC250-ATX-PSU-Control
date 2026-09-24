@@ -6,7 +6,7 @@ Arduino Nano와 Arduino Uno는 구조가 동일하여 Uno를 보유하고 있다
 
 ## 제작목표
 * 가장 적은 비용
-  * Arduino Nano는 알리에서 호환제품을 3000원정도에 구매가능하며 별도의 프로그래머나 디버거가 필요없음
+  * Arduino Nano는 알리에서 호환제품을 3400원정도에 구매가능하며 별도의 프로그래머나 디버거가 필요없음
   * Nano에서 BC250으로 종료신호를 보내기 위해 별도의 USB to ttl모듈이 필요함
       > Nano에 내장된 USB칩으로 TTL통신을 하려고 했으나 Arduino는 Serical통신이 시작되면 Reset되도록 설계된것을 나중에 알게되어 최초계획과는 다르게 추가비용(2000원)이 발생
 * 가장 간단한 구조
@@ -177,10 +177,10 @@ crontab -e
 ```
 
 ## BOM
-
+> 배송비제외
 | 자재  | 가격 | 구매링크 |
 | ------------- |:-------------:|-------------|
-| Arduino Nano| 개당1800원 | [알리link](https://ko.aliexpress.com/item/1005007392605300.html) |
+| Arduino Nano| 개당3400원 | [알리link](https://ko.aliexpress.com/item/1005007392605300.html) |
 | USB to TTL | 개당1700원 | [알리link](https://ko.aliexpress.com/item/1005007718678768.html) |
 | Momentary Button | 개당2600원 | [알리link](https://ko.aliexpress.com/item/1005006477375437.html) |
 
