@@ -49,7 +49,7 @@ TPMS 3.3V Standby
 > TPMS 헤더에 듀퐁케이블로 연결(일반점퍼 규격보다 작은 PC메인보드의 USB3.0커넥터와 같은 2.0mm의 작은Pitch)
 
 버튼 및 버튼LED
-> 버튼LED의 전압에 맞는 PSU에서 뽑아서 사용
+> 버튼LED의 허용전압에 맞는접압을 PSU에서 선택해서 사용
 
 ```mermaid
 flowchart LR
