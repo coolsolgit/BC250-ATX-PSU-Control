@@ -113,10 +113,12 @@ sudo pacman -S python-pyserial
 ```
 
 ### 2.파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
+
+권한편집시작
 ```
 sudo nano /etc/sudoers
 ```
-맨아래줄추가
+내용추가
 ```
 username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 ```
@@ -124,10 +126,12 @@ username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 ### 3.자동실행
 
 CachyOS는 crontab기본설치가 안되있음
+
+파일생성 및 편집
 ```
 sudo nano /etc/systemd/system/serial-listen.service
 ```
-추가
+내용추가
 ```
 [Unit]
 Description=Shutdown signal monitor
@@ -144,6 +148,8 @@ WantedBy=multi-user.target
 
 ### 4.crontab으로 자동실행하는경우
 > CachyOS는 기본으로 crontab이 설치되어 있지 않음
+
+crontab편집시작
 ```
 crontab -e
 ```
