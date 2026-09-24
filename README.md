@@ -112,7 +112,16 @@ python --version
 sudo pacman -S python-pyserial
 ```
 
-### 2.Python코드가 권한없이 poweroff호출가능하도록 권한편집
+### 2.Python Listener소스파일 복사
+Linux에 등록된 USB장치의 ID를 확인하여 동일한 명칭으로 소스수정
+```
+sudo pacman -Syu
+sudo pacman -S python
+python --version
+sudo pacman -S python-pyserial
+```
+
+### 3.Python코드가 권한없이 poweroff호출가능하도록 권한편집
 
 권한편집시작
 ```
@@ -123,7 +132,7 @@ sudo nano /etc/sudoers
 username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 ```
 
-### 3.자동실행
+### 4.자동실행
 
 파일생성 및 편집
 ```
@@ -151,7 +160,7 @@ sudo systemctl enable serial-listen.service
 sudo systemctl start serial-listen.service
 ```
 
-### 4.crontab으로 자동실행하는경우(Optional)
+### 5.crontab으로 자동실행하는경우(Optional)
 > CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
 crontab편집시작
