@@ -114,11 +114,10 @@ sudo pacman -S python-pyserial
 
 ### 2.Python Listener소스파일 복사
 Linux에 등록된 USB장치의 ID를 확인하여 동일한 명칭으로 소스수정
+> 보통 ttyACM0이거나 ttyUSB0로 인식됨
 ```
-sudo pacman -Syu
-sudo pacman -S python
-python --version
-sudo pacman -S python-pyserial
+# Replace '/dev/ttyACM0' with your actual Arduino port
+ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 ```
 
 ### 3.Python코드가 권한없이 poweroff호출가능하도록 권한편집
