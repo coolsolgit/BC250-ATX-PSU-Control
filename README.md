@@ -104,7 +104,7 @@ flowchart LR
 ## Serial port listener적용
 CachyOS기준으로 설명
 
-Pathon 및 Sereial Lib설치
+### 1.Pathon 및 Sereial Lib설치
 ```
 sudo pacman -Syu
 sudo pacman -S python
@@ -112,7 +112,7 @@ python --version
 sudo pacman -S python-pyserial
 ```
 
-파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
+### 2.파이썬코드가 권한없이 poweroff호출가능하도록 권한편집
 ```
 sudo nano /etc/sudoers
 ```
@@ -121,16 +121,7 @@ sudo nano /etc/sudoers
 username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 ```
 
-자동실행
-
-crontab으로 등록
-```
-crontab -e
-```
-추가
-```
-@reboot /usr/bin/python3 /MY_PATH/serial_listener.py &
-```
+### 3.자동실행
 
 CachyOS는 crontab기본설치가 안되있음
 ```
@@ -149,6 +140,16 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+```
+
+### 4.crontab으로 자동실행하는경우
+> CachyOS는 기본으로 crontab이 설치되어 있지 않음
+```
+crontab -e
+```
+추가
+```
+@reboot /usr/bin/python3 /MY_PATH/serial_listener.py &
 ```
 
 ## BOM
