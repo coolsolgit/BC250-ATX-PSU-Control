@@ -143,7 +143,7 @@ sudo nano /etc/sudoers
 username ALL=(ALL) NOPASSWD: /usr/bin/systemctl poweroff, /usr/bin/shutdown
 ```
 
-### 4.자동실행
+### 4.systemctl을 이용하여 자동실행
 
 파일생성 및 편집
 ```
@@ -171,7 +171,7 @@ sudo systemctl enable serial-listen.service
 sudo systemctl start serial-listen.service
 ```
 
-### 5.crontab으로 자동실행하는경우(Optional)
+### 5.systemctl을 사용하지 않고 crontab으로 자동실행하는경우(Optional)
 > CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
 crontab편집시작
