@@ -102,7 +102,7 @@ flowchart LR
 ```
 
 ## Serial port listener적용
-CachyOS와 bazzite기준으로 설명
+CachyOS와 Bazzite기준으로 설명
 
 ### 1.Python 및 Sereial Lib설치
 
@@ -114,7 +114,7 @@ python --version
 sudo pacman -S python-pyserial
 ```
 
-#### bazzite
+#### Bazzite
 ```
 rpm-ostree install python3-pyserial
 ```
