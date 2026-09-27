@@ -171,7 +171,7 @@ sudo systemctl enable serial-listen.service
 sudo systemctl start serial-listen.service
 ```
 
-### 4.systemctl을 사용하지 않고 crontab으로 자동실행하는경우(Optional)
+### 4.systemctl을 이용하지 않고 crontab으로 자동실행하려는경우(선택사항)
 > CachyOS는 기본으로 crontab이 설치되어 있지 않아 사전설치필요
 
 crontab편집시작
