@@ -105,8 +105,9 @@ flowchart LR
 CachyOS와 Bazzite기준으로 설명
 
 ### 1.Python코드가 권한없이 poweroff호출가능하도록 권한편집
+
+Bazzite는 적용불필요, CachyOS만 설정
 > Linux는 전원종료에 SuperUser권한이 필요하여 sudo명령없이 poweroff호출가능하도록 변경
-> Bazzite는 설정필요없음
 
 권한편집시작
 ```
