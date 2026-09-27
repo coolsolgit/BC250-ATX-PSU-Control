@@ -106,6 +106,7 @@ CachyOS와 Bazzite기준으로 설명
 
 ### 1.Python코드가 권한없이 poweroff호출가능하도록 권한편집
 > Linux는 전원종료에 SuperUser권한이 필요하여 sudo명령없이 poweroff호출가능하도록 변경
+> Bazzite는 설정필요없음
 
 권한편집시작
 ```
@@ -169,6 +170,7 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable serial-listen.service
 sudo systemctl start serial-listen.service
+sudo reboot
 ```
 
 ### 4.systemctl을 이용하지 않고 crontab으로 자동실행하려는경우(선택사항)
